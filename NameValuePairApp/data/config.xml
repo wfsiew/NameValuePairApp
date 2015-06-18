@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <pairs>
-  <pair name="hello" value="app" />
-  <pair name="app" value="com" />
+  <pair name="time" value="6" />
+  <pair name="sett" value="8" />
+  <pair name="jum" value="77" />
+  <pair name="bra" value="2" />
+  <pair name="hello" value="world" />
 </pairs>

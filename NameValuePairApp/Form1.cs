@@ -21,11 +21,6 @@ namespace NameValuePairApp
         private BindingList<NameValue> bindingList;
 
         /// <summary>
-        /// The temp BindingList used to keep the original list before sorting the bindingList
-        /// </summary>
-        private BindingList<NameValue> tmpBindingList;
-
-        /// <summary>
         /// Name sort direction
         /// </summary>
         private SortDir NameSortDir = SortDir.DEFAULT;
@@ -44,7 +39,6 @@ namespace NameValuePairApp
         {
             InitializeComponent();
             bindingList = new BindingList<NameValue>();
-            tmpBindingList = new BindingList<NameValue>();
             BindListBox();
         }
 
@@ -89,7 +83,6 @@ namespace NameValuePairApp
             {
                 CurrentSort = SortField.NAME;
                 NameSortDir = SortDir.ASC;
-                tmpBindingList = bindingList;
                 bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Name).ToList());
                 lbSortName.Text = SortDir.ASC.ToString();
             }
@@ -106,7 +99,6 @@ namespace NameValuePairApp
             {
                 CurrentSort = SortField.DEFAULT;
                 NameSortDir = SortDir.DEFAULT;
-                bindingList = tmpBindingList;
                 lbSortName.Text = "";
             }
 
@@ -124,7 +116,6 @@ namespace NameValuePairApp
             {
                 CurrentSort = SortField.VALUE;
                 ValueSortDir = SortDir.ASC;
-                tmpBindingList = bindingList;
                 bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Value).ToList());
                 lbSortValue.Text = SortDir.ASC.ToString();
             }
@@ -141,7 +132,6 @@ namespace NameValuePairApp
             {
                 CurrentSort = SortField.DEFAULT;
                 ValueSortDir = SortDir.DEFAULT;
-                bindingList = tmpBindingList;
                 lbSortValue.Text = "";
             }
 
