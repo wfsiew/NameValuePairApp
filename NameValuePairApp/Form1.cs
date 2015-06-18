@@ -79,28 +79,9 @@ namespace NameValuePairApp
         /// <param name="e"></param>
         private void btnSortName_Click(object sender, EventArgs e)
         {
-            if (NameSortDir == SortDir.DEFAULT)
-            {
-                CurrentSort = SortField.NAME;
-                NameSortDir = SortDir.ASC;
-                bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Name).ToList());
-                lbSortName.Text = SortDir.ASC.ToString();
-            }
-
-            else if (NameSortDir == SortDir.ASC)
-            {
-                CurrentSort = SortField.NAME;
-                NameSortDir = SortDir.DESC;
-                bindingList = new BindingList<NameValue>(bindingList.OrderByDescending(k => k.Name).ToList());
-                lbSortName.Text = SortDir.DESC.ToString();
-            }
-
-            else if (NameSortDir == SortDir.DESC)
-            {
-                CurrentSort = SortField.DEFAULT;
-                NameSortDir = SortDir.DEFAULT;
-                lbSortName.Text = "";
-            }
+            CurrentSort = SortField.NAME;
+            NameSortDir = SortDir.ASC;
+            bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Name).ToList()); 
 
             BindListBox();
         }
@@ -112,28 +93,9 @@ namespace NameValuePairApp
         /// <param name="e"></param>
         private void btnSortValue_Click(object sender, EventArgs e)
         {
-            if (ValueSortDir == SortDir.DEFAULT)
-            {
-                CurrentSort = SortField.VALUE;
-                ValueSortDir = SortDir.ASC;
-                bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Value).ToList());
-                lbSortValue.Text = SortDir.ASC.ToString();
-            }
-
-            else if (ValueSortDir == SortDir.ASC)
-            {
-                CurrentSort = SortField.VALUE;
-                ValueSortDir = SortDir.DESC;
-                bindingList = new BindingList<NameValue>(bindingList.OrderByDescending(k => k.Value).ToList());
-                lbSortValue.Text = SortDir.DESC.ToString();
-            }
-
-            else if (ValueSortDir == SortDir.DESC)
-            {
-                CurrentSort = SortField.DEFAULT;
-                ValueSortDir = SortDir.DEFAULT;
-                lbSortValue.Text = "";
-            }
+            CurrentSort = SortField.VALUE;
+            ValueSortDir = SortDir.ASC;
+            bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Value).ToList());
 
             BindListBox();
         }
@@ -314,23 +276,13 @@ namespace NameValuePairApp
         {
             if (CurrentSort == SortField.NAME)
             {
-                if (NameSortDir == SortDir.ASC)
-                    bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Name).ToList());
-
-                else if (NameSortDir == SortDir.DESC)
-                    bindingList = new BindingList<NameValue>(bindingList.OrderByDescending(k => k.Name).ToList());
-
+                bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Name).ToList());
                 BindListBox();
             }
 
             else if (CurrentSort == SortField.VALUE)
             {
-                if (ValueSortDir == SortDir.ASC)
-                    bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Value).ToList());
-
-                else if (ValueSortDir == SortDir.DESC)
-                    bindingList = new BindingList<NameValue>(bindingList.OrderByDescending(k => k.Value).ToList());
-
+                bindingList = new BindingList<NameValue>(bindingList.OrderBy(k => k.Value).ToList());
                 BindListBox();
             }
         }

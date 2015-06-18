@@ -37,8 +37,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lbSortName = new System.Windows.Forms.Label();
-            this.lbSortValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtVal
@@ -128,29 +126,11 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lbSortName
-            // 
-            this.lbSortName.AutoSize = true;
-            this.lbSortName.Location = new System.Drawing.Point(505, 92);
-            this.lbSortName.Name = "lbSortName";
-            this.lbSortName.Size = new System.Drawing.Size(0, 13);
-            this.lbSortName.TabIndex = 9;
-            // 
-            // lbSortValue
-            // 
-            this.lbSortValue.AutoSize = true;
-            this.lbSortValue.Location = new System.Drawing.Point(504, 122);
-            this.lbSortValue.Name = "lbSortValue";
-            this.lbSortValue.Size = new System.Drawing.Size(0, 13);
-            this.lbSortValue.TabIndex = 10;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 319);
-            this.Controls.Add(this.lbSortValue);
-            this.Controls.Add(this.lbSortName);
+            this.ClientSize = new System.Drawing.Size(511, 319);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
@@ -179,8 +159,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label lbSortName;
-        private System.Windows.Forms.Label lbSortValue;
     }
 }
 
