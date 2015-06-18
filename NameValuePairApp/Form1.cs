@@ -258,7 +258,8 @@ namespace NameValuePairApp
                 string[] arr = val.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
                 if (arr != null && arr.Length == 2)
                 {
-                    if (arr[0].Trim().IsAlphaNumeric() && arr[1].Trim().IsAlphaNumeric())
+                    if (!string.IsNullOrEmpty(arr[0]) && arr[0].Trim().IsAlphaNumeric() && 
+                        !string.IsNullOrEmpty(arr[1]) && arr[1].Trim().IsAlphaNumeric())
                     {
                         o = new NameValue(arr[0].Trim(), arr[1].Trim());
                         b = true;
